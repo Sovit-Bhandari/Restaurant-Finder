@@ -7,7 +7,7 @@ let apiKey = null;
 // Function to load the Google Maps API script dynamically
 async function loadGoogleMapsScript() {
     try {
-        const response = await fetch('http://localhost:5001/maps-api-key'); 
+        const response = await fetch('https://restaurant-finder-backend-p7v1.onrender.com/maps-api-key'); 
         const data = await response.json();
         apiKey = data.apiKey; 
         
@@ -52,7 +52,7 @@ function initMap() {
 // Fetch nearby restaurants using Google Places API
 async function fetchNearbyRestaurants(location) {
     try {
-        const response = await fetch(`http://localhost:5001/restaurants?location=${location.lat},${location.lng}&term=restaurant`);
+        const response = await fetch(`https://restaurant-finder-backend-p7v1.onrender.com/restaurants?location=${location.lat},${location.lng}&term=restaurant`);
         const data = await response.json();
 
         if (data.results && data.results.length > 0) {
@@ -77,7 +77,7 @@ async function findRestaurants() {
     }
 
     try {
-        const response = await fetch(`http://localhost:5001/restaurants?location=${locationInput}&term=${preferenceInput}`);
+        const response = await fetch(`https://restaurant-finder-backend-p7v1.onrender.com/restaurants?location=${locationInput}&term=${preferenceInput}`);
         const data = await response.json();
 
         console.log('Search API response:', data); 
