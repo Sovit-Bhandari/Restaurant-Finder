@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="" id="googleMapsScript" async defer></script>
+    <title>FlavorFinder</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side: Searching Dashboard -->
+        <div class="left-panel">
+            <h2>Search for Restaurants</h2>
+            <div class="search-fields">
+                <input type="text" id="preferenceInput" placeholder="Interests/Preference (e.g., Sports)" />
+                <input type="text" id="locationInput" placeholder="Location (e.g., Tampa, FL)" />
+                <button onclick="findRestaurants()">Find Restaurants</button>
+            </div>
+
+            <!-- Map container at the bottom of the left-panel -->
+            <div id="map" class="map"></div>
+        </div>
+
+        <!-- Right Side: Options -->
+        <div class="right-panel">
+            <div id="result" class="result">
+                <h2>Recommended Restaurants:</h2>
+                <ul id="restaurantList"></ul>
+                <button id="loadMoreButton" style="display: none;" onclick="loadNextPage()">Load More</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
